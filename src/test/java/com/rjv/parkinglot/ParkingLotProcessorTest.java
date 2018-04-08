@@ -34,7 +34,7 @@ public class ParkingLotProcessorTest {
     @Test
     public void createParkingLot() throws Exception {
         parkingLotProcessor.createParkingLot("4");
-        assertEquals(4, parkingLotProcessor.getAvailableSlotList().size());
+        assertEquals(4, parkingLotProcessor.getAvailableSlots().size());
         assertTrue("Created4parkingslots...".equalsIgnoreCase(getReplace()));
     }
 
@@ -120,6 +120,6 @@ public class ParkingLotProcessorTest {
         parkingLotProcessor.createParkingLot("6");
         parkingLotProcessor.park("KL-14-AA-5566", "Red");
         parkingLotProcessor.park("KL-01-CA-1256", "White");
-        assertEquals(4, parkingLotProcessor.getAvailableSlotList().size());
+        assertEquals(4, parkingLotProcessor.getAvailableSlots().size());
     }
 }

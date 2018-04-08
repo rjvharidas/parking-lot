@@ -24,7 +24,7 @@ public class ParkingLotApp {
     private static void executeConsoleInput(Executor executor) {
         System.out.println("*********** PARKING-LOT SHELL **************");
         System.out.println("----------- ----------------- --------------");
-        System.out.println("Please Enter Commands('exit'-> for quit)...");
+        System.out.println("Please Enter Commands('q'-> for quit)...");
         while (true) {
             if (takeInputs(executor)) break;
         }
@@ -49,7 +49,7 @@ public class ParkingLotApp {
     }
 
     private static boolean execute(Executor executor, String inputString) throws InvocationTargetException, IllegalAccessException {
-        if (inputString.equalsIgnoreCase("exit")) {
+        if (inputString.equalsIgnoreCase("q")) {
             return true;
         } else if ((inputString == null) || (inputString.isEmpty())) {
         } else {

@@ -9,7 +9,7 @@ import java.util.stream.IntStream;
 
 public class ParkingLotProcessor {
 
-    private ArrayList<Integer> availableSlotList;
+    private ArrayList<Integer> availableSlots;
     private Map<String, Car> slots;
     private Map<String, String> regNums;
     private Map<String, ArrayList<String>> colors;
@@ -18,8 +18,8 @@ public class ParkingLotProcessor {
         return numParkingLot;
     }
 
-    public ArrayList<Integer> getAvailableSlotList() {
-        return availableSlotList;
+    public ArrayList<Integer> getAvailableSlots() {
+        return availableSlots;
     }
 
     private int numParkingLot = 0;
@@ -46,8 +46,8 @@ public class ParkingLotProcessor {
     }
 
     private void createSlots() {
-        availableSlotList = new ArrayList<>();
-        IntStream.rangeClosed(1, this.numParkingLot).forEach(i -> availableSlotList.add(i));
+        availableSlots = new ArrayList<>();
+        IntStream.rangeClosed(1, this.numParkingLot).forEach(i -> availableSlots.add(i));
     }
 
     public void park(String regNo, String color) {
@@ -61,8 +61,8 @@ public class ParkingLotProcessor {
     }
 
     private void allocateParkingLot(String regNo, String color) {
-        Collections.sort(availableSlotList);
-        String slot = availableSlotList.get(0).toString();
+        Collections.sort(availableSlots);
+        String slot = availableSlots.get(0).toString();
         Car car = new Car(regNo, color);
         slots.put(slot, car);
         regNums.put(regNo, slot);
@@ -72,7 +72,7 @@ public class ParkingLotProcessor {
             addColor(regNo, color);
         }
         System.out.println("Parked at slot number " + slot + "\n");
-        availableSlotList.remove(0);
+        availableSlots.remove(0);
     }
 
     private void addColor(String regNo, String color) {
@@ -107,7 +107,7 @@ public class ParkingLotProcessor {
             if (regNoList.contains(carToLeave.getRegNo())) {
                 regNoList.remove(carToLeave.getRegNo());
             }
-            availableSlotList.add(Integer.parseInt(slotNo));
+            availableSlots.add(Integer.parseInt(slotNo));
             System.out.println("Slot number " + slotNo + " is free\n");
         } else {
             System.out.println("Slot number " + slotNo + " is already empty\n");
