@@ -1,0 +1,14 @@
+create_parking_lot 6
+park KL­11­CC­5534 White
+park KL­07­CB­4455 Black
+park KL­15­FD­4321 Red
+park KL­07­CB­4255 Black
+park KL­07­CB­6455 Green
+leave 4
+status
+park KL­14­FD­4321 White
+park KL­10­FD­4321 White
+registration_numbers_for_cars_with_colour White
+slot_numbers_for_cars_with_colour White
+slot_number_for_registration_number KL­07­CB­6455
+slot_number_for_registration_number GA­01­AA­4455
