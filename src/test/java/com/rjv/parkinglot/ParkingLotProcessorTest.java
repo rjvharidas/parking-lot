@@ -16,14 +16,14 @@ public class ParkingLotProcessorTest {
     private ByteArrayOutputStream outContent;
 
     @Before
-    public void setUpStreams() {
+    public void setUp() {
         parkingLotProcessor = new ParkingLotProcessor();
         outContent = new ByteArrayOutputStream();
         System.setOut(new PrintStream(outContent));
     }
 
     @After
-    public void cleanUpStreams() {
+    public void clean() {
         System.setOut(null);
     }
 
