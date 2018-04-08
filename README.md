@@ -1,4 +1,4 @@
-#About Parking Lot Problem
+About Parking Lot Problem
 
 I own a multi­storey parking lot that can hold up to 'n' cars at any given point in time. Each slot is given a number starting at 1 increasing with increasing distance from the entry point in steps of one. I want to create an automated ticketing system that allows my customers to use my parking lot without human intervention. 
 
@@ -104,3 +104,10 @@ To launch the console run  :
 #####java -jar build/libs/parking-lot-1.0.jar console
 
 Try the above commands one by one in terminal.
+
+#3 Try Docker
+Build docker using below command:
+####docker build -t parking-lot . 
+And Run Docker conatiner 
+####docker container run parking-lot
+Now you can see the file inputs are working as expected.
